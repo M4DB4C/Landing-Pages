@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Artist Studio",
+  "description": "Landing page interativa premium de galeria de arte com configurador de molduras e visualizador de ambientes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

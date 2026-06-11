@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "EB Garamond", serif;
+
+  --color-surface: #fef8f6;
+  --color-surface-dim: #ded9d7;
+  --color-surface-bright: #fef8f6;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f8f2f0;
+  --color-surface-container: #f2edeb;
+  --color-surface-container-high: #ede7e5;
+  --color-surface-container-highest: #e7e1df;
+  --color-on-surface: #1d1b1a;
+  --color-on-surface-variant: #54433f;
+  --color-inverse-surface: #32302f;
+  --color-inverse-on-surface: #f5efed;
+  --color-outline: #87726e;
+  --color-outline-variant: #dac1bc;
+  --color-surface-tint: #944936;
+  --color-primary: #702e1d;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #8e4432;
+  --color-on-primary-container: #ffc3b5;
+  --color-inverse-primary: #ffb4a3;
+  --color-secondary: #6b5c4c;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #f4dfcb;
+  --color-on-secondary-container: #716252;
+  --color-tertiary: #43423f;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #5b5a56;
+  --color-on-tertiary-container: #d4d1cc;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-primary-fixed: #ffdad2;
+  --color-primary-fixed-dim: #ffb4a3;
+  --color-on-primary-fixed: #3c0700;
+  --color-on-primary-fixed-variant: #763221;
+  --color-secondary-fixed: #f4dfcb;
+  --color-secondary-fixed-dim: #d7c3b0;
+  --color-on-secondary-fixed: #241a0e;
+  --color-on-secondary-fixed-variant: #524436;
+  --color-tertiary-fixed: #e5e2dd;
+  --color-tertiary-fixed-dim: #c9c6c2;
+  --color-on-tertiary-fixed: #1c1c19;
+  --color-on-tertiary-fixed-variant: #474743;
+  --color-background: #fef8f6;
+  --color-on-background: #1d1b1a;
+  --color-surface-variant: #e7e1df;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fef8f6;
+}
+::-webkit-scrollbar-thumb {
+  background: #dac1bc;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #87726e;
+}
+
