@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2, ChevronRight, PenTool, Sparkles, HelpCircle } from 'lucide-react';
+import { Send, CheckCircle2, PenTool, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CustomProjectRequest } from '../types';
 
 export default function ContactForm() {
   const [form, setForm] = useState({
@@ -26,7 +25,7 @@ export default function ContactForm() {
       newErrors.email = 'Insira um e-mail válido.';
     }
     if (!form.phone.trim()) newErrors.phone = 'Por favor, informe seu WhatsApp.';
-    if (!form.description.trim()) newErrors.description = 'Conte um pouco sobre o projeto dos seus sonhos.';
+    if (!form.description.trim()) newErrors.description = 'Conte um pouco sobre o projeto, o ambiente ou a intenção da obra.';
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -37,7 +36,7 @@ export default function ContactForm() {
     if (validate()) {
       setSubmitted(true);
       // Mock log the custom request parameters
-      console.log('Premium Custom Project Request submitted: ', form);
+      console.log('M4d-B4C Studio custom project request submitted: ', form);
     }
   };
 
@@ -66,10 +65,10 @@ export default function ContactForm() {
               Projetos Especiais & Encomendas
             </span>
             <h3 className="font-display text-3xl md:text-5xl text-primary font-bold tracking-tight mb-6">
-              Vamos transformar seu espaço?
+              Vamos criar presença para o seu espaço?
             </h3>
             <p className="font-sans text-sm md:text-base text-on-surface-variant leading-relaxed max-w-lg mb-8">
-              O artista aceita encomendas sob demanda para retratos hiper-realistas, aquarelas decorativas exclusivas ou artes digitais sob medida para salas corporativas, hotéis ou lares que apreciam a excelência artística. 
+              O M4d-B4C Studio desenvolve obras sob demanda para residências, escritórios, hotéis, coleções privadas e projetos de arquitetura que pedem uma imagem autoral, não uma decoração genérica. 
             </p>
 
             {/* Quality indicators list */}
@@ -79,9 +78,9 @@ export default function ContactForm() {
                   <PenTool size={11} />
                 </div>
                 <div>
-                  <h4 className="font-display text-sm font-bold text-primary">Técnica Original Manual ou Digital</h4>
+                  <h4 className="font-display text-sm font-bold text-primary">Técnica manual, digital ou híbrida</h4>
                   <p className="text-xs text-on-surface-variant font-sans mt-0.5 leading-relaxed">
-                    Você acompanha todas as fases do esboço, sombreamento e finalização através de relatórios visuais digitais privados.
+                    A obra pode nascer em grafite, aquarela, composição digital ou processo híbrido, sempre orientada por curadoria humana.
                   </p>
                 </div>
               </div>
@@ -91,9 +90,9 @@ export default function ContactForm() {
                   <Sparkles size={11} />
                 </div>
                 <div>
-                  <h4 className="font-display text-sm font-bold text-primary">Autenticidade Consagrada</h4>
+                  <h4 className="font-display text-sm font-bold text-primary">Autoria e proveniência</h4>
                   <p className="text-xs text-on-surface-variant font-sans mt-0.5 leading-relaxed">
-                    Cada trabalho encomendado é de peça única assinado e acompanhado por um registro de proveniência criptográfico.
+                    Projetos especiais podem incluir registro de autoria, versão, licença e contexto curatorial para uso privado, comercial ou institucional.
                   </p>
                 </div>
               </div>
@@ -128,7 +127,7 @@ export default function ContactForm() {
                     Solicitar Orçamento de Projeto
                   </h4>
                   <p className="text-xs text-on-surface-variant font-sans leading-relaxed">
-                    Preencha os campos abaixo e entraremos em contato via WhatsApp/E-mail em até 24 horas úteis.
+                    Preencha os campos abaixo e o M4d-B4C Studio retornará por WhatsApp/e-mail em até 24 horas úteis.
                   </p>
                 </div>
 
@@ -236,13 +235,13 @@ export default function ContactForm() {
                 {/* 5. Descrição / Escopo */}
                 <div className="flex flex-col">
                   <label className="text-[10px] font-sans font-bold uppercase tracking-wider text-on-surface-variant mb-1">
-                    Descrição da Obra Desejada (Tema, Elementos, Paleta de Cores)
+                    Descrição da Obra Desejada (tema, ambiente, escala, paleta e intenção)
                   </label>
                   <textarea
                     rows={3}
                     value={form.description}
                     onChange={(e) => setForm({ ...form, description: e.target.value })}
-                    placeholder="Descreva sua visão no detalhe. Ex: Um retrato realista do meu pai em papel algodão cinza escuro, focado na iluminação de contraste do rosto..."
+                    placeholder="Ex: Uma obra para hall de entrada, com presença forte, tons escuros, escala monumental e referência visual ligada à memória da família ou da marca..."
                     className="bg-transparent border-b border-outline/40 focus:border-primary focus:outline-none py-2 text-sm text-on-surface transition font-sans placeholder-on-surface-variant/30 resize-none"
                   />
                   {errors.description && (
@@ -276,13 +275,13 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <h4 className="font-display text-2xl font-bold text-primary">
-                    Inquérito Recebido!
+                    Solicitação Recebida!
                   </h4>
                   <p className="font-sans text-xs text-on-surface-variant mt-2 max-w-sm mx-auto leading-relaxed">
-                    Olá <strong>{form.name}</strong>, sua proposta de encomendar uma obra em <strong>{form.technique.toUpperCase()}</strong> foi catalogada sob o registro número <strong>#EN-2026-94</strong>. 
+                    Olá <strong>{form.name}</strong>, sua proposta de encomendar uma obra em <strong>{form.technique.toUpperCase()}</strong> foi registrada para avaliação curatorial. 
                   </p>
                   <p className="font-sans text-xs text-on-surface-variant mt-3 max-w-sm mx-auto leading-relaxed italic border-l-2 border-primary/30 pl-3">
-                    "Em menos de 24 horas, o artista ou nosso curador entrará em contato via WhatsApp/e-mail para dar seguimento ao esboço."
+                    "Em menos de 24 horas úteis, o M4d-B4C Studio entrará em contato para alinhar intenção, escala, suporte e próximos passos."
                   </p>
                 </div>
 
