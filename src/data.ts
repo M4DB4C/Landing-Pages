@@ -86,18 +86,18 @@ export const MOCKUPS = [
 export const ACCORDION_FAQS = [
   {
     question: 'Como funciona o licenciamento de arte digital?',
-    answer: 'Ao adquirir uma obra digital da Artist_Studio, você recebe links para download instantâneo de arquivos TIFF e PDF em altíssima resolução (300 DPI+), prontos para impressão profissional. O uso pessoal é ilimitado, permitindo imprimir em múltiplos tamanhos.'
+    answer: 'Ao adquirir ou licenciar uma obra do M4d-B4C Studio, você recebe arquivos em alta resolução preparados para impressão profissional e uso pessoal ou projetual conforme o tipo de licença contratado. Projetos especiais podem incluir informações de autoria, versão, licença e proveniência.'
   },
   {
     question: 'Qual é o melhor tipo de papel para imprimir as obras?',
-    answer: 'Para obras de Grafite e Aquarela, recomendamos papel Fine Art de algodão (giclée) com gramatura de 300g+. Para a Arte Digital, acabamento acetinado de alta gramatura ou impressão direta sobre placas de alumínio oferecem resultados futuristas fascinantes.'
+    answer: 'Para grafite e aquarela, recomendamos papel Fine Art de algodão (giclée) com gramatura de 300g+. Para arte digital, acabamento acetinado, acrílico, metal ou impressão direta em suporte rígido podem criar presença visual mais contemporânea.'
   },
   {
     question: 'Vocês realizam encomendas personalizadas?',
-    answer: 'Sim. O artista aceita um número limitado de projetos sob medida por semestre. Use o formulário na seção Contact para especificar sua ideia, as dimensões desejadas e a técnica de preferência.'
+    answer: 'Sim. O M4d-B4C Studio aceita um número limitado de projetos sob medida por semestre. Use o formulário de encomendas para descrever a ideia, o ambiente, as dimensões desejadas, a técnica e a finalidade de uso.'
   },
   {
-    question: 'Qual o tempo de envio para as obras físicas se encomendadas sob demanda?',
-    answer: 'Nossas opções listadas de "Shop Prints" simulam a produção premium local de molduras sob demanda. Geralmente as molduras levam de 3 a 5 dias úteis para confecção manual, garantindo encaixes milimetricamente perfeitos.'
+    question: 'Qual o tempo de envio para as obras físicas sob demanda?',
+    answer: 'O prazo depende do suporte, dimensão e tipo de moldura. Em geral, prints e molduras sob demanda exigem alguns dias úteis de produção para garantir acabamento, escala, encaixe e controle de qualidade adequados.'
   }
 ];
