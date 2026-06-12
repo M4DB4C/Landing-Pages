@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, ShoppingBag } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import logoM4dB4c from '../assets/logo-m4d-b4c.svg';
 
 interface HeaderProps {
   cartCount: number;
@@ -13,7 +14,7 @@ export default function Header({ cartCount, onOpenCart, onScrollToSection }: Hea
 
   const navLinks = [
     { label: 'Coleção', id: 'gallery' },
-    { label: 'Sobre', id: 'about' },
+    { label: 'Autoria', id: 'about' },
     { label: 'Simulador', id: 'simulator' },
     { label: 'Contato', id: 'contact' },
   ];
@@ -25,7 +26,7 @@ export default function Header({ cartCount, onOpenCart, onScrollToSection }: Hea
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
-      <div className="flex justify-between items-center w-full px-4 md:px-16 py-4 max-w-[1280px] mx-auto">
+      <div className="flex justify-between items-center w-full px-4 md:px-16 py-3 max-w-[1280px] mx-auto">
         {/* Burger menu icon on mobile - Left */}
         <div className="flex items-center gap-4">
           <button
@@ -40,9 +41,17 @@ export default function Header({ cartCount, onOpenCart, onScrollToSection }: Hea
           {/* Logo */}
           <button 
             onClick={() => handleLinkClick('hero')}
-            className="font-display text-2xl md:text-3xl text-primary font-semibold uppercase tracking-tighter hover:opacity-80 transition cursor-pointer"
+            className="flex items-center gap-3 hover:opacity-90 transition cursor-pointer"
+            aria-label="M4d-B4C Studio - início"
           >
-            ARTIST_STUDIO
+            <img
+              src={logoM4dB4c}
+              alt="M4d-B4C Studio"
+              className="h-10 md:h-12 w-auto rounded-sm shadow-sm"
+            />
+            <span className="hidden lg:inline font-display text-xl text-primary font-semibold tracking-tight">
+              M4d-B4C Studio
+            </span>
           </button>
         </div>
 
@@ -127,11 +136,16 @@ export default function Header({ cartCount, onOpenCart, onScrollToSection }: Hea
               </div>
 
               <div className="mt-auto p-4 bg-surface-container-low rounded border border-outline-variant/30 text-center">
-                <p className="font-display text-primary font-semibold text-lg">Artist Studio</p>
-                <p className="text-xs text-on-surface-variant font-sans mt-1">Coleção Exclusiva de Prints Premium</p>
+                <img
+                  src={logoM4dB4c}
+                  alt="M4d-B4C Studio"
+                  className="h-14 w-auto mx-auto rounded-sm mb-3"
+                />
+                <p className="font-display text-primary font-semibold text-lg">M4d-B4C Studio</p>
+                <p className="text-xs text-on-surface-variant font-sans mt-1">Arte autoral, prints premium e projetos sob demanda</p>
                 <div className="mt-4 flex flex-col gap-2">
-                  <span className="text-[11px] uppercase tracking-widest text-[#dac1bc]">Curadoria Ativa</span>
-                  <p className="text-xs text-on-surface-variant font-serif italic">"Arte que inspira, pronta para sua parede."</p>
+                  <span className="text-[11px] uppercase tracking-widest text-[#dac1bc]">Curadoria Humana</span>
+                  <p className="text-xs text-on-surface-variant font-serif italic">"Técnica clássica, imagem computacional e presença espacial."</p>
                 </div>
               </div>
             </motion.div>

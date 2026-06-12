@@ -8,16 +8,17 @@ import { ARTWORKS, ACCORDION_FAQS } from './data';
 import { Artwork, FrameConfig, CartItem } from './types';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  ArrowUpRight, 
   ChevronDown, 
   Clock, 
   Leaf, 
   Scale, 
   Sparkles, 
   Shield, 
-  Check, 
   ArrowRight,
-  Maximize2
+  Maximize2,
+  PenTool,
+  Fingerprint,
+  FileCheck2
 } from 'lucide-react';
 
 export default function App() {
@@ -34,7 +35,7 @@ export default function App() {
 
   // Load cart from localStorage on init
   useEffect(() => {
-    const savedCart = localStorage.getItem('artist_studio_cart');
+    const savedCart = localStorage.getItem('m4db4c_studio_cart');
     if (savedCart) {
       try {
         setCartItems(JSON.parse(savedCart));
@@ -47,7 +48,7 @@ export default function App() {
   // Save cart changes
   const saveCart = (items: CartItem[]) => {
     setCartItems(items);
-    localStorage.setItem('artist_studio_cart', JSON.stringify(items));
+    localStorage.setItem('m4db4c_studio_cart', JSON.stringify(items));
   };
 
   // Add customized frame to cart
@@ -140,15 +141,15 @@ export default function App() {
             className="w-full md:w-1/2 flex flex-col items-start gap-6 text-left"
           >
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary text-[11px] font-sans font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">
-              <Sparkles size={11} className="animate-pulse" /> Ateliê de Curadoria Fina
+              <Sparkles size={11} className="animate-pulse" /> M4d-B4C Studio · Ateliê de Curadoria Fina
             </div>
 
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl text-primary leading-[1.1] tracking-tight">
-              Arte que Inspira,<br/>Pronta para Sua Parede
+              Arte autoral para espaços que não aceitam decoração genérica
             </h1>
             
             <p className="font-sans text-base sm:text-lg text-on-surface-variant max-w-lg leading-relaxed">
-              Explore uma sofisticada coleção de obras hiper-realistas em grafite, aquarelas fluidas e arte digital moderna. Adquira ativos digitais imediatos ou simule luxuosas molduras de madeira sob medida com entrega certificada.
+              O M4d-B4C Studio cria e licencia obras entre técnica clássica, imagem computacional e curadoria humana. Prints premium, peças sob demanda e simulações em ambiente real para interiores com presença, memória e precisão visual.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mt-4">
@@ -159,10 +160,10 @@ export default function App() {
                 Ver Coleção Completa <ChevronDown size={14} className="animate-bounce" />
               </button>
               <button 
-                onClick={() => handleScrollToSection('simulator')}
+                onClick={() => handleScrollToSection('about')}
                 className="border border-outline text-on-surface-variant hover:text-primary hover:border-primary px-8 py-4 font-sans font-bold text-xs tracking-widest leading-none transition-all uppercase rounded flex items-center justify-center gap-2 cursor-pointer bg-surface/50"
               >
-                Ver Simulador Real <ArrowRight size={13} />
+                Conhecer Autoria <ArrowRight size={13} />
               </button>
             </div>
           </motion.div>
@@ -195,7 +196,65 @@ export default function App() {
           </motion.div>
         </section>
 
-        {/* 3. Catalog Gallery Section */}
+        {/* 3. Author / Authorship Section */}
+        <section id="about" className="bg-surface-container-low border-y border-outline-variant/20 py-20 scroll-mt-24">
+          <div className="max-w-[1280px] mx-auto px-4 md:px-16 grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7 }}
+              className="bg-surface rounded-xl border border-outline-variant/25 p-6 md:p-8 shadow-sm"
+            >
+              <span className="font-mono text-xs tracking-widest text-[#dac1bc] uppercase block mb-2">
+                Autor / Autoria
+              </span>
+              <h2 className="font-display text-3xl md:text-5xl text-primary font-bold tracking-tight mb-6">
+                Alfonso de Orte · M4d-B4C
+              </h2>
+              <p className="font-sans text-sm md:text-base text-on-surface-variant leading-relaxed mb-5">
+                O M4d-B4C Studio nasce do encontro entre desenho, fotografia, física, arte digital e leitura semântica da imagem. Cada obra é conduzida por olhar humano: composição, intenção, técnica, suporte e contexto espacial não são deixados ao acaso.
+              </p>
+              <p className="font-sans text-sm md:text-base text-on-surface-variant leading-relaxed">
+                A tecnologia entra como instrumento de expansão, não como substituta da autoria. O resultado é uma produção visual autoral para colecionadores, arquitetos, decoradores e espaços que buscam presença estética com procedência clara.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="bg-surface p-5 rounded-xl border border-outline-variant/20 shadow-sm">
+                <div className="w-10 h-10 flex items-center justify-center border border-primary text-primary rounded-lg bg-primary/5 mb-4">
+                  <PenTool size={18} />
+                </div>
+                <h3 className="font-display text-lg font-bold text-primary mb-2">Técnica e gesto</h3>
+                <p className="text-xs text-on-surface-variant font-sans leading-relaxed">
+                  Grafite, aquarela, fotografia e composição digital tratados como linguagens de uma mesma oficina visual.
+                </p>
+              </div>
+
+              <div className="bg-surface p-5 rounded-xl border border-outline-variant/20 shadow-sm">
+                <div className="w-10 h-10 flex items-center justify-center border border-primary text-primary rounded-lg bg-primary/5 mb-4">
+                  <Fingerprint size={18} />
+                </div>
+                <h3 className="font-display text-lg font-bold text-primary mb-2">Assinatura autoral</h3>
+                <p className="text-xs text-on-surface-variant font-sans leading-relaxed">
+                  Obras pensadas para carregar identidade, memória e densidade visual — não apenas preencher parede.
+                </p>
+              </div>
+
+              <div className="bg-surface p-5 rounded-xl border border-outline-variant/20 shadow-sm">
+                <div className="w-10 h-10 flex items-center justify-center border border-primary text-primary rounded-lg bg-primary/5 mb-4">
+                  <FileCheck2 size={18} />
+                </div>
+                <h3 className="font-display text-lg font-bold text-primary mb-2">Proveniência</h3>
+                <p className="text-xs text-on-surface-variant font-sans leading-relaxed">
+                  Cada projeto pode ser acompanhado por dados de autoria, versão, licença e contexto de uso.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 4. Catalog Gallery Section */}
         <section id="gallery" className="max-w-[1280px] mx-auto px-4 md:px-16 py-16 scroll-mt-24">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6 border-b border-outline-variant/20 pb-4">
             <div>
@@ -304,18 +363,18 @@ export default function App() {
           </div>
         </section>
 
-        {/* 4. Print-on-Demand Benefits Section (Tactile cards) */}
+        {/* 5. Print-on-Demand Benefits Section (Tactile cards) */}
         <section className="bg-surface-container-low py-20 border-y border-outline-variant/20">
           <div className="max-w-[1280px] mx-auto px-4 md:px-16">
             <div className="max-w-2xl mb-16 text-left">
               <span className="font-mono text-xs tracking-widest text-[#dac1bc] uppercase block mb-1">
-                Excelência e Sustentabilidade
+                Impressão, Licenciamento e Presença
               </span>
               <h2 className="font-display text-3xl md:text-5xl text-primary font-bold tracking-tight">
-                Por que Arte Digital?
+                Por que arte sob demanda?
               </h2>
               <p className="font-sans text-sm md:text-base text-on-surface-variant mt-3 leading-relaxed">
-                A nova era do colecionismo oferece flexibilidade extrema e consciência ambiental profunda, sem comprometer em absolutamente nenhum pixel a qualidade e sensibilidade visual da obra física original.
+                O M4d-B4C Studio aproxima obra, espaço e suporte. A imagem pode nascer como arquivo digital, print fine art, peça emoldurada ou licença para projeto — sempre com intenção autoral e adequação ao ambiente.
               </p>
             </div>
 
@@ -327,10 +386,10 @@ export default function App() {
                   <Clock size={18} />
                 </div>
                 <h4 className="font-display text-xl font-bold text-primary">
-                  Acesso Instantâneo
+                  Aquisição sem fricção
                 </h4>
                 <p className="font-sans text-[13px] text-on-surface-variant leading-relaxed">
-                  Baixe e imprima sua obra de arte imediatamente após a confirmação. Esqueça semanas de ansiedade por envios ou taxas de frete de longa distância.
+                  Escolha a obra, simule sua presença no ambiente e avance para impressão, download ou projeto sob medida sem perder clareza sobre formato, escala e finalidade.
                 </p>
               </div>
 
@@ -340,10 +399,10 @@ export default function App() {
                   <Leaf size={18} />
                 </div>
                 <h4 className="font-display text-xl font-bold text-primary">
-                  Sustentabilidade Real
+                  Produção consciente
                 </h4>
                 <p className="font-sans text-[13px] text-on-surface-variant leading-relaxed">
-                  Reduza sua pegada de carbono global. Ao escolher downloads ou impressões sob demanda regionais, você elimina embalagens de plástico bolha de transporte aéreo.
+                  Prints e molduras podem ser produzidos sob demanda, evitando estoque decorativo sem destino e favorecendo escolhas mais precisas de suporte, papel e acabamento.
                 </p>
               </div>
 
@@ -353,10 +412,10 @@ export default function App() {
                   <Scale size={18} />
                 </div>
                 <h4 className="font-display text-xl font-bold text-primary">
-                  Escalabilidade Infinita
+                  Obra adaptável ao espaço
                 </h4>
                 <p className="font-sans text-[13px] text-on-surface-variant leading-relaxed">
-                  Fornecemos arquivos vetorizados ou rastreados em altíssima densidade de pixels. Escolha o suporte físico livremente (Fine Art, Lona Canva ou Acrílico).
+                  Fine art, canvas, acrílico, metal ou licenciamento digital: o suporte é escolhido conforme arquitetura, luz, escala e intenção de uso.
                 </p>
               </div>
 
@@ -364,10 +423,10 @@ export default function App() {
           </div>
         </section>
 
-        {/* 5. Immersive Mockup Showcase */}
+        {/* 6. Immersive Mockup Showcase */}
         <MockupShowcase />
 
-        {/* 6. Accordion FAQs Section */}
+        {/* 7. Accordion FAQs Section */}
         <section className="bg-surface-container py-16 border-t border-outline-variant/20">
           <div className="max-w-[800px] mx-auto px-4">
             <div className="text-center mb-12">
@@ -421,29 +480,29 @@ export default function App() {
           </div>
         </section>
 
-        {/* 7. Bespoke Custom Requests Form */}
+        {/* 8. Bespoke Custom Requests Form */}
         <ContactForm />
 
       </main>
 
-      {/* 8. Elegant Editorial Gallery Footer */}
+      {/* 9. Elegant Editorial Gallery Footer */}
       <footer className="bg-surface-container-high border-t border-outline-variant/30 pt-16 pb-8">
         <div className="max-w-[1280px] mx-auto px-4 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-outline-variant/20 pb-12">
           
           {/* Col 1: Brand details */}
           <div className="space-y-4">
-            <h4 className="font-display text-2xl text-primary font-bold uppercase tracking-tighter">
-              ARTIST_STUDIO
+            <h4 className="font-display text-2xl text-primary font-bold tracking-tight">
+              M4d-B4C Studio
             </h4>
             <p className="font-sans text-xs text-on-surface-variant max-w-sm leading-relaxed">
-              Resgatando a elegância do colecionismo de belas artes através do meio digital de forma sustentável, acessível e primorosa.
+              Ateliê digital de arte autoral, prints premium e projetos sob demanda. Técnica clássica, imagem computacional e curadoria humana para espaços reais.
             </p>
             <div className="flex gap-4 pt-2">
               <span className="text-[10px] text-on-surface-variant font-mono uppercase bg-surface-container px-2.5 py-1 rounded border border-outline-variant/20">
-                SSL Secured
+                Curadoria Humana
               </span>
               <span className="text-[10px] text-on-surface-variant font-mono uppercase bg-surface-container px-2.5 py-1 rounded border border-outline-variant/20">
-                Since 2024
+                Autoria Verificável
               </span>
             </div>
           </div>
@@ -461,13 +520,13 @@ export default function App() {
                 <button onClick={() => handleScrollToSection('gallery')} className="hover:text-primary transition cursor-pointer">Categorias</button>
               </li>
               <li>
+                <button onClick={() => handleScrollToSection('about')} className="hover:text-primary transition cursor-pointer">Autoria</button>
+              </li>
+              <li>
                 <button onClick={() => handleScrollToSection('simulator')} className="hover:text-primary transition cursor-pointer">Simulador</button>
               </li>
               <li>
                 <button onClick={() => handleScrollToSection('contact')} className="hover:text-primary transition cursor-pointer">Encomendas</button>
-              </li>
-              <li>
-                <span className="opacity-50">Sobre o Artista</span>
               </li>
               <li>
                 <span className="opacity-50">Certificados</span>
@@ -482,11 +541,11 @@ export default function App() {
                 <Shield size={14} />
               </div>
               <h5 className="font-display text-sm font-bold text-primary">
-                Garantia de Autenticidade
+                Autoria e Proveniência
               </h5>
             </div>
             <p className="text-[11px] text-on-surface-variant font-sans leading-relaxed">
-              Todos os downloads compreendem metadados criptografados e arquivos indexados de alta precisão cromática. Prints emoldurados usam carvalho autêntico reflorestado de altíssimo acabamento.
+              Cada obra ou projeto pode ser acompanhado por informações de autoria, versão, licença, finalidade de uso e contexto curatorial. A obra não é apenas imagem: é presença visual com procedência.
             </p>
           </div>
 
@@ -499,15 +558,15 @@ export default function App() {
             <span className="text-outline-variant/40">•</span>
             <span className="hover:text-primary transition cursor-pointer">Termos de Serviço</span>
             <span className="text-outline-variant/40">•</span>
-            <span className="hover:text-primary transition cursor-pointer">Termos de Coleta Digital</span>
+            <span className="hover:text-primary transition cursor-pointer">Termos de Licenciamento</span>
           </div>
           <div>
-            © 2026 Artist Studio. Todos os direitos reservados.
+            © 2026 M4d-B4C Studio. Todos os direitos reservados.
           </div>
         </div>
       </footer>
 
-      {/* 9. Interactive Modals & Drawers */}
+      {/* 10. Interactive Modals & Drawers */}
       <AnimatePresence>
         {selectedArtwork && (
           <PrintConfiguratorModal 
