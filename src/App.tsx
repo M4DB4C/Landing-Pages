@@ -5,6 +5,7 @@ import MockupShowcase from './components/MockupShowcase';
 import ContactForm from './components/ContactForm';
 import CartDrawer from './components/CartDrawer';
 import { ARTWORKS, ACCORDION_FAQS } from './data';
+import { imagePaths } from './imagePaths';
 import { Artwork, FrameConfig, CartItem } from './types';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
@@ -180,7 +181,7 @@ export default function App() {
           >
             <img 
               className="w-full h-full object-cover grayscale brightness-[0.93] group-hover:scale-105 group-hover:brightness-95 transition-all duration-1000 ease-out" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzjjR79CdxzytGKAns1VGc7rXE2hg17hexPBACiH4S2oWpyKHmJrNg9Aa1WLns3n4Z7gGmYOgL4u8ow3KsHby_HKKf2TZpFqlYp_j2jZe-U0pL1GpztB9LKsGg2m4UWqowSQhIrwFnRZf0cnzdRsLHQJM9W6x3kwqZErQnib41yGyzqMIxi8YFLT5wm4VwYA2Wtxp81aaG71tUwnuZGduCdQ4IFTqockZpHNZdXH2ihVmn_PSqwuIu9h-9RzkCylOqqp6E8nAwgjc"
+              src={imagePaths.heroArtwork}
               alt="Estudo de mãos entrelaçadas"
               referrerPolicy="no-referrer"
             />

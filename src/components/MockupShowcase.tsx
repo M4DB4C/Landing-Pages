@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Layers, Fullscreen, Image as ImageIcon, Sparkles, Check } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ARTWORKS } from '../data';
+import { imagePaths } from '../imagePaths';
 import { Artwork } from '../types';
 
 export default function MockupShowcase() {
@@ -18,7 +19,7 @@ export default function MockupShowcase() {
     {
       id: 'sala',
       title: 'Sala de Estar Moderna',
-      bgImg: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCTL52i_H5K5EcqHh5ANvNn6H1SSkicZzEueXzPuXENmJevsri_d62ttmLwQiUSQRG_r6izkKVCRlj1YNTYl72fZNwd6J-qwkb967oNEep_P_tHsmb7bHtTQzzz7EuOiz0ZBFuTPQwxhmQsJd5G7xBTzyaB629qASQXq-Rgsqh19hyDTqL1oFPXZOHRKixSvUsSwITyWSAOdKDefO-fSJgykdwLF5b_q07vgHZVuAScDulbUv1Q0_kS1q0ly1930Tb6jyXVZSPy7sU',
+      bgImg: imagePaths.salaEstarModerna,
       overlayStyle: {
         top: '26%',
         left: '12.4%',
@@ -32,7 +33,7 @@ export default function MockupShowcase() {
     {
       id: 'office',
       title: 'Home Office Criativo',
-      bgImg: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCFTiKmRQ_XHlNkz1evIiD5L2o29rlbAsmazgx9pgOf6-eYiOcVa2ibCD_cHAMCxkILnbUtgtPlfVyL1A0CVQtN4WkawMYJq6pLcqAbFe3GF47QZ9UP2A5iw593dZoTlpgBd_JbtvzoqnmiDOeEAglkHABiBT2rprRfnX-Kl7LJcy7wsV7HvpaCcPlVziL6wUVV91PTOKlFXFLJbW9SNBSdXjc1s2GZZb6se4EKgFmtY0GvPYDEZtc3D-FMNUPIWm3VEOaqMfm_HyE',
+      bgImg: imagePaths.homeOfficeCriativo,
       overlayStyle: {
         top: '19.9%',
         left: '67.0%',
@@ -46,7 +47,7 @@ export default function MockupShowcase() {
     {
       id: 'bedroom',
       title: 'Dormitório Contemporâneo',
-      bgImg: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBI0IB5vJJfLAXyuNGuZH3k0KyQzXa4aotiIAvtiFSMJIMiBoadzxk-0T9FLUuoOfQ4LQXKMfHiACOax2iSyGcUaZNSG_Eb3fNZ1nOo28Mrx2ZkM3r2h-m5ktswHbeD4fqRtDXDNtNQhyjea1H-_hxF5nlc1Nq3zaaXbHX1UUHHE9jXkK-e5HJ1IXXYycBaaTx8sxHyCI6Gjgf2QE8xhiXnbKGCKclLRQEUioUA9f3QnMuhRFRpUtMx2huVjqDbCyvHdtCv1BBrVsI',
+      bgImg: imagePaths.dormitorioContemporaneo,
       overlayStyle: {
         top: '29.3%',
         left: '70.4%',

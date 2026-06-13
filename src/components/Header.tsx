@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X, ShoppingBag } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import logoM4dB4c from '../assets/logo-m4d-b4c.svg';
+import logoM4dB4c from '../assets/logo-m4d-b4c.png';
 
 interface HeaderProps {
   cartCount: number;

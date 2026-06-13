@@ -142,6 +142,9 @@ export default function PrintConfiguratorModal({ artwork, onClose, onAddToCart }
                 
                 <button 
                   onClick={() => setIsLiked(!isLiked)}
+                  type="button"
+                  aria-label={isLiked ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}
+                  title={isLiked ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}
                   className={`p-2 rounded-full border transition cursor-pointer ${isLiked ? 'bg-red-50 text-red-500 border-red-200' : 'text-on-surface-variant hover:text-primary border-outline-variant/40'}`}
                 >
                   <Heart size={18} fill={isLiked ? "currentColor" : "none"} />
